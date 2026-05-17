@@ -6,3 +6,6 @@ build/
 .DS_Store
 .vite/
 server/node_modules/
+
+# Production artifacts
+server/.env.prod
