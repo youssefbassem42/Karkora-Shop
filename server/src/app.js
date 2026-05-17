@@ -16,11 +16,19 @@ const allowedOrigins = [
   'http://localhost:4173',
 ];
 
+const normalizedOrigins = allowedOrigins.map(origin => {
+  let cleaned = origin.trim().replace(/\/$/, '');
+  if (cleaned && !cleaned.startsWith('http://') && !cleaned.startsWith('https://')) {
+    return `https://${cleaned}`;
+  }
+  return cleaned;
+});
+
 app.use(
   cors({
     origin: (origin, callback) => {
       // Allow requests with no origin (e.g. Postman, curl)
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || normalizedOrigins.includes(origin.replace(/\/$/, ''))) {
         return callback(null, true);
       }
       callback(new Error(`CORS: origin ${origin} not allowed`));
