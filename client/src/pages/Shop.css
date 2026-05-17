@@ -1,0 +1,44 @@
+/* Shop.css */
+.shop-page { background-color: var(--bg); }
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-6);
+}
+
+.shop-title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.shop-count {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+  margin-top: 4px;
+}
+
+.shop-filters {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+
+.shop-grid { margin-top: var(--space-4); }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-top: var(--space-12);
+}
+
+.pagination-info {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-2);
+}
